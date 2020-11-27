@@ -15,7 +15,7 @@ public class SplashScreen extends AppCompatActivity {
         fireSplashScreen();
     }
     private void fireSplashScreen() {
-        int splash_screen_time_out = 2100;
+        int splash_screen_time_out = 2000;
         new Handler().postDelayed(() -> {
             Intent i=new Intent(SplashScreen.this,Login.class);
             startActivity(i);
