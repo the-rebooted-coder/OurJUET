@@ -4,4 +4,8 @@
     <string name="juet_branding">Our JUET</string>
     <string name="juet_logo">JUET Logo</string>
     <string name="enrollment_number">Enrollment Number</string>
+    <string name="date_of_birth_dd_mm_yyyy">Date of Birth (DD-MM-YYYY)</string>
+    <string name="password">Password</string>
+    <string name="desired_attendence">Desired Attendence</string>
+    <string name="_90">90</string>
 </resources>

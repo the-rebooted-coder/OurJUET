@@ -73,8 +73,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/productsans"
-            android:hint="Date of Birth (DD-MM-YYYY)"
-            android:maxLength="10" />
+            android:inputType="date"
+            android:hint="@string/date_of_birth_dd_mm_yyyy"
+            android:maxLength="10"
+            android:autofillHints="" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!-- Password Label -->
@@ -95,8 +97,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/productsans"
-            android:hint="Password"
-            android:inputType="textPassword" />
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:importantForAutofill="no" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -117,10 +120,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/productsans"
-            android:hint="Desired Attendence"
+            android:hint="@string/desired_attendence"
             android:inputType="number"
             android:maxLength="3"
-            android:text="90" />
+            android:text="@string/_90"
+            android:importantForAutofill="no" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
