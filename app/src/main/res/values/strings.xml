@@ -2,4 +2,7 @@
     <string name="app_name">OurJUET</string>
     <string name="sign_in">Sign-In</string>
     <string name="juet_branding"><![CDATA[Jaypee University of Engineering & Technology]]></string>
+    <string name="enrollment_number">Enrollment Number</string>
+    <string name="dd_mm_yyyy">DD-MM-YYYY</string>
+    <string name="password">Password</string>
 </resources>
