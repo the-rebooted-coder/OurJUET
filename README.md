@@ -1,1 +1,1 @@
-# OurJUET
+# Our JUET
