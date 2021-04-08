@@ -41,17 +41,17 @@ public class Login extends AppCompatActivity {
     private void validate() {
         if (enr.getText().toString().isEmpty())
         {
-         enr.setError("Enrollment Number is Required",getDrawable(R.drawable.ic_baseline_error_outline_24));
+         enr.setError("Enrollment Number is Required");
             vibrateDeviceThird();
         }
         else if (password.getText().toString().isEmpty())
         {
-         password.setError("Password is Required",getDrawable(R.drawable.ic_baseline_error_outline_24));
+         password.setError("Password is Required");
             vibrateDeviceThird();
         }
         else if (dob.getText().toString().isEmpty())
         {
-         dob.setError("Date of Birth is Required",getDrawable(R.drawable.ic_baseline_error_outline_24));
+         dob.setError("Date of Birth is Required");
             vibrateDeviceThird();
         }
         else
