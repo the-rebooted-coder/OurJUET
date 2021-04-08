@@ -44,14 +44,14 @@ public class Login extends AppCompatActivity {
          enr.setError("Enrollment Number is Required");
             vibrateDeviceThird();
         }
+        else if (dob.getText().toString().isEmpty())
+        {
+            dob.setError("Date of Birth is Required");
+            vibrateDeviceThird();
+        }
         else if (password.getText().toString().isEmpty())
         {
          password.setError("Password is Required");
-            vibrateDeviceThird();
-        }
-        else if (dob.getText().toString().isEmpty())
-        {
-         dob.setError("Date of Birth is Required");
             vibrateDeviceThird();
         }
         else
