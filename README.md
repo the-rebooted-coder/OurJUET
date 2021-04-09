@@ -1,2 +1,2 @@
 # Our JUET
-An app under development
+An app under development, for JUET
