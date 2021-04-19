@@ -2,6 +2,7 @@ package com.aaxena.ourjuet;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -57,6 +58,14 @@ public class Login extends AppCompatActivity {
         else
         {
             Toast.makeText(this,"Doing",Toast.LENGTH_SHORT).show();
+        }
+    }
+    public class doInBackground extends AsyncTask<Void, Void, Void>{
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+
+            return null;
         }
     }
     private void vibrateDeviceThird() {
