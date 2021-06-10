@@ -1,2 +1,2 @@
 # Our JUET
-An app under development, for students from JUET to track the webkiosk easily
+An android app under development, for students from JUET to track the webkiosk easily
