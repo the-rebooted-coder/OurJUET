@@ -5,4 +5,7 @@
     <string name="enrollment_number">Enrollment Number</string>
     <string name="dd_mm_yyyy">Date of Birth (DD-MM-YYYY)</string>
     <string name="password">Password</string>
+    <string name="preferencefile">app_myjuet_com_myjuet_preferences</string>
+    <string name="key_enrollment">enrollment</string>
+    <string name="key_password">password</string>
 </resources>
