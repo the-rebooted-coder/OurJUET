@@ -1,11 +1,7 @@
 package com.aaxena.ourjuet;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -17,16 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.ViewModelProviders;
-
-import org.jsoup.Connection;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
-import java.io.IOException;
-import java.util.Map;
 
 public class Login extends AppCompatActivity implements View.OnClickListener{
 
@@ -56,33 +43,23 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
         if (mEnrollment.getText().toString().isEmpty())
         {
             mEnrollment.setError("Enrollment Number is Required");
-            vibrateDeviceThird();
+            vibrateDeviceError();
             return false;
         }
         else if (mDob.getText().toString().isEmpty())
         {
             mDob.setError("Date of Birth is Required");
-            vibrateDeviceThird();
+            vibrateDeviceError();
             return false;
         }
         else if (mPassword.getText().toString().isEmpty())
         {
             mPassword.setError("Password is Required");
-            vibrateDeviceThird();
+            vibrateDeviceError();
             return false;
         }
         return true;
     }
-    private void vibrateDeviceThird() {
-        Vibrator vibrator = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            vibrator.vibrate(VibrationEffect.createOneShot(36, VibrationEffect.DEFAULT_AMPLITUDE));
-        } else {
-            //deprecated in API 26
-            vibrator.vibrate(28);
-        }
-    }
-
     @Override
     public void onClick(View view) {
         if (view == mLogin && validate()){
@@ -95,6 +72,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                             break;
                         case SUCCESS:
                             Toast.makeText(this, "You just checked-in!", Toast.LENGTH_SHORT).show();
+                            vibrateDeviceSuccess();
                       //      Intent refresh = new Intent(this,RefreshService.class);
                       //      refresh.putExtra("manual",true);
                       //      ActivityCompat.startForegroundService(this,refresh);
@@ -106,22 +84,44 @@ public class Login extends AppCompatActivity implements View.OnClickListener{
                         case WRONG_PASSWORD:
                             Toast.makeText(this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                             dismissProgress();
+                            vibrateDeviceError();
                             break;
                         case NO_INTERNET:
                             Toast.makeText(this, "No Internet", Toast.LENGTH_SHORT).show();
                             dismissProgress();
+                            vibrateDeviceError();
                             break;
                         case WEBKIOSK_DOWN:
                             Toast.makeText(this, "The JUET Servers are Not Responding", Toast.LENGTH_SHORT).show();
                             dismissProgress();
+                            vibrateDeviceError();
                             break;
                         case FAILED:
                             Toast.makeText(this, "A Wild Wild Error Just Occurred!", Toast.LENGTH_SHORT).show();
                             dismissProgress();
+                            vibrateDeviceError();
                             break;
                     }
                 }
             });
+        }
+    }
+    private void vibrateDeviceError() {
+        Vibrator v3 = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        long[] pattern = {0,25,50,35,100};
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v3.vibrate(VibrationEffect.createWaveform(pattern,-1));
+        } else {
+            v3.vibrate(pattern,-1);
+        }
+    }
+    private void vibrateDeviceSuccess() {
+        Vibrator v3 = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
+        long[] pattern = {0,25,70,38};
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            v3.vibrate(VibrationEffect.createWaveform(pattern,-1));
+        } else {
+            v3.vibrate(pattern,-1);
         }
     }
     ProgressDialog dialog;

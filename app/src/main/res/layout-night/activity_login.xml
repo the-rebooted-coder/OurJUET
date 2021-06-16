@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true"
     android:fitsSystemWindows="true">
 
@@ -26,15 +27,19 @@
                 android:text="@string/juet_branding"
                 android:textAlignment="center"/>
 
-            <ImageView
+            <androidx.cardview.widget.CardView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center_horizontal"
+                app:cardCornerRadius="8dp"
                 android:layout_marginTop="20dp"
-                android:elevation="15dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/logo" />
-
+                android:elevation="15dp">
+                <ImageView
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:src="@drawable/logo"/>
+            </androidx.cardview.widget.CardView>
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
@@ -47,7 +52,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/productsans"
-                    android:hint="@string/enrollment_number" />
+                    android:hint="@string/enrollment_number"
+                    android:inputType="textCapWords|textCapCharacters" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout

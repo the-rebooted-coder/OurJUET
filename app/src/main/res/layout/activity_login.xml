@@ -47,9 +47,11 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/enrNumber"
                     android:layout_width="match_parent"
+
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/productsans"
-                    android:hint="@string/enrollment_number" />
+                    android:hint="@string/enrollment_number"
+                    android:inputType="textCapSentences|textCapWords|textCapCharacters" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
